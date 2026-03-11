@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | STACKLY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-logo">STACKLY</div>
+        <div class="loader-bar"></div>
+    </div>
+    <nav class="scrolled">
+        <a href="index.html" class="logo">STACKLY</a>
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="index.html">Home</a>
+                <div class="dropdown-content">
+                    <a href="index.html">Home Page 1</a>
+                    <a href="index2.html">Home Page 2</a>
+                </div>
+            </div>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html" onclick="handleLogout()" class="btn btn-outline" style="padding: 8px 15px;">Logout</a>
+            <a href="signin.html" class="nav-signin-btn"
+                style="background: linear-gradient(135deg, #3b5bdb, #7048e8); color: white; padding: 9px 22px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: opacity 0.2s; white-space: nowrap; margin-left: 10px;">Sign
+                In</a>
+        </div>
+        <div class="mobile-toggle" id="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Breaking News Ticker -->
+
+    <div class="container fade-in" style="margin-top: 130px;">
+        <div class="dash-header">
+            <div>
+                <h1 style="font-size: 2.5rem; letter-spacing: -0.5px; margin-bottom: 5px;">Welcome Back, <span
+                        style="color: var(--accent-color);">Lead Analyst</span></h1>
+                <p style="color: var(--text-muted);">Real-time metrics for <span class="logo-inline">STACKLY</span>
+                    intelligence.</p>
+            </div>
+            <div style="display: flex; gap: 15px;">
+                <a href="index.html" class="btn btn-outline">Return to Hub</a>
+                <div class="btn btn-primary">Download Report</div>
+            </div>
+        </div>
+
+        <div class="stat-grid">
+            <div class="card glass stat-card">
+                <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">
+                    Market Volatility</p>
+                <h2 id="stat-1">12%</h2>
+                <div style="color: #00ff87; font-size: 0.8rem; margin-top: 5px;">+2.4% vs prev week</div>
+            </div>
+            <div class="card glass stat-card">
+                <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">
+                    Daily Readers</p>
+                <h2 id="stat-2">45k</h2>
+                <div style="color: #00ff87; font-size: 0.8rem; margin-top: 5px;">+8.1% vs prev week</div>
+            </div>
+            <div class="card glass stat-card">
+                <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">
+                    Active Subscriptions</p>
+                <h2 id="stat-3">8.2k</h2>
+                <div style="color: #ff3e3e; font-size: 0.8rem; margin-top: 5px;">-1.2% vs prev week</div>
+            </div>
+            <div class="card glass stat-card">
+                <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">
+                    Uptime SLA</p>
+                <h2 id="stat-4">99.9%</h2>
+                <div style="color: #00ff87; font-size: 0.8rem; margin-top: 5px;">No incidents detected</div>
+            </div>
+        </div>
+
+        <div class="stat-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="card glass">
+                <h3 style="margin-bottom: 25px;">Recent Activity</h3>
+                <ul style="border-left: 1px solid var(--glass-border); padding-left: 20px;">
+                    <li style="margin-bottom: 15px; position: relative;">
+                        <span
+                            style="position: absolute; left: -26px; top: 10px; width: 10px; height: 10px; background: var(--accent-color); border-radius: 50%;"></span>
+                        <p style="font-size: 0.85rem; color: #fff;">Accessed 'Quantum Encryption' whitepaper</p>
+                        <span style="font-size: 0.7rem; color: var(--text-muted);">2 hours ago</span>
+                    </li>
+                    <li style="margin-bottom: 15px; position: relative;">
+                        <span
+                            style="position: absolute; left: -26px; top: 10px; width: 10px; height: 10px; background: var(--text-muted); border-radius: 50%;"></span>
+                        <p style="font-size: 0.85rem; color: #fff;">Updated profile preferences</p>
+                        <span style="font-size: 0.7rem; color: var(--text-muted);">5 hours ago</span>
+                    </li>
+                    <li style="margin-bottom: 15px; position: relative;">
+                        <span
+                            style="position: absolute; left: -26px; top: 10px; width: 10px; height: 10px; background: #00ff87; border-radius: 50%;"></span>
+                        <p style="font-size: 0.85rem; color: #fff;">New signal detected in 'Fintech'</p>
+                        <span style="font-size: 0.7rem; color: var(--text-muted);">Yesterday</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card glass">
+                <h3 style="margin-bottom: 20px;">System Health</h3>
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                        <span>Data Processing Layer</span>
+                        <span style="color: #00ff87;">Optimal</span>
+                    </div>
+                    <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px;">
+                        <div style="width: 94%; height: 100%; background: var(--accent-color); border-radius: 10px;">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                        <span>Terminal Connectivity</span>
+                        <span style="color: #00ff87;">Stable</span>
+                    </div>
+                    <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px;">
+                        <div style="width: 88%; height: 100%; background: var(--accent-color); border-radius: 10px;">
+                        </div>
+                    </div>
+                </div>
+                <div
+                    style="background: rgba(0, 242, 254, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0, 242, 254, 0.2);">
+                    <p style="font-size: 0.75rem; color: var(--accent-color);">⚠️ System Maintenance scheduled for 04:00
+                        UTC.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-title">Active Data Nodes</h3>
+        <div class="card glass" style="padding: 40px; margin-bottom: 30px;">
+            <div
+                style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 40px;">
+                <div style="flex: 1; min-width: 250px;">
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <span
+                            style="width: 12px; height: 12px; border-radius: 50%; background: #00ff87; box-shadow: 0 0 10px #00ff87;"></span>
+                        <span style="font-size: 0.8rem; font-weight: 700;">NODE_01_SF (ONLINE)</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Primary ingest for US-West hardware
+                        signals. Currently processing 2.4TB/s of speculative microcode yields.</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #00ff87;"></span>
+                        <span style="font-size: 0.8rem; font-weight: 700;">NODE_04_SZ (ONLINE)</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Main pipe for East-Asia semiconductor
+                        logistics. Analyzing Q3 lithography bottlenecks in real-time.</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <span
+                            style="width: 12px; height: 12px; border-radius: 50%; background: #ff3e3e; box-shadow: 0 0 10px #ff3e3e;"></span>
+                        <span style="font-size: 0.8rem; font-weight: 700;">NODE_07_LDN (OFFLINE)</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">European regulatory intercept node. Down
+                        for scheduled security-mesh rotation until 19:00 UTC.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-title">Saved Portfolios</h3>
+        <div class="news-grid" style="margin-bottom: 30px;">
+            <div class="card glass" style="grid-column: span 2;">
+                <div class="card-tag">Semiconductors</div>
+                <h3>Emerging Markets in East Asia (2026-2030)</h3>
+                <p>Tracking the latest supply chain movements across major chip manufacturers for high-fidelity
+                    insights.</p>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <a href="404.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Open
+                        Portfolio</a>
+                    <a href="404.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.8rem;">Share
+                        File</a>
+                </div>
+            </div>
+            <div class="card glass">
+                <div class="card-tag">AI Ethics</div>
+                <h3>Governance and Regulatory Updates</h3>
+                <p>Newest policy news from the global committee on Artificial General Intelligence control.</p>
+                <a href="404.html" class="btn btn-outline"
+                    style="padding: 10px 20px; font-size: 0.8rem; margin-top: 20px;">Open Hub</a>
+            </div>
+        </div>
+
+        <!-- System Architecture Blueprint Section -->
+        <h3 class="section-title">System Architecture</h3>
+        <div class="card glass" style="padding: 40px; text-align: center;">
+            <p style="color: var(--text-muted); margin-bottom: 30px;">The <span class="logo-inline">STACKLY</span> data
+                mesh architecture. Highly
+                modular, horizontally scalable, and ethically firewalled.</p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <div
+                    style="padding: 15px 30px; border: 1px solid var(--accent-color); color: var(--accent-color); border-radius: 10px; font-size: 0.8rem;">
+                    INGEST_LAYER</div>
+                <div
+                    style="padding: 15px 30px; border: 1px solid var(--text-muted); color: #fff; border-radius: 10px; font-size: 0.8rem;">
+                    CLEANSE_PIPELINE</div>
+                <div
+                    style="padding: 15px 30px; border: 1px solid #00ff87; color: #00ff87; border-radius: 10px; font-size: 0.8rem;">
+                    ETHICS_VALIDATOR</div>
+                <div
+                    style="padding: 15px 30px; border: 1px solid var(--accent-color); color: var(--accent-color); border-radius: 10px; font-size: 0.8rem;">
+                    API_DISTRIBUTION</div>
+            </div>
+        </div>
+
+        <!-- Terminal View -->
+        <h3 class="section-title">Terminal Stream</h3>
+        <div class="card glass"
+            style="padding: 20px; font-family: 'Courier New', Courier, monospace; font-size: 0.82rem; background: #0a0a0a; color: #00ff87; min-height: 180px; overflow-y: auto; border: 1px solid #1a1a1a; margin-bottom: 40px;">
+            <p>[12:45:01] INGEST: Sector 'Photonics' updated. 4 new nodes detected.</p>
+            <p>[12:46:12] SYNC: London-Core-03 linked to SZ-Hard-02.</p>
+            <p>[12:48:33] AUTH: Token refresh successful for SessionID: NT-88219.</p>
+            <p>[12:50:05] ALERT: New whitepaper 'DNA-Storage v2' indexed in Bio-Tech lab.</p>
+            <p>[12:52:19] SECURITY: Periodic ZK-Proof verification passed. Integrity: 99.99%.</p>
+            <p style="animation: dash-blink 1s step-end infinite;">[CURS] _</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Neural Bandwidth -->
+            <div class="card glass" style="padding: 25px;">
+                <h4 style="margin-bottom: 20px; font-size: 0.9rem;">Neural Bandwidth</h4>
+                <div style="height: 120px; display: flex; align-items: flex-end; gap: 10px; padding: 10px;">
+                    <div style="flex: 1; height: 40%; background: rgba(0, 242, 254, 0.1); border-radius: 4px;"></div>
+                    <div style="flex: 1; height: 60%; background: rgba(0, 242, 254, 0.1); border-radius: 4px;"></div>
+                    <div
+                        style="flex: 1; height: 85%; background: var(--accent-color); border-radius: 4px; box-shadow: var(--accent-glow);">
+                    </div>
+                    <div style="flex: 1; height: 70%; background: rgba(0, 242, 254, 0.1); border-radius: 4px;"></div>
+                    <div style="flex: 1; height: 50%; background: rgba(0, 242, 254, 0.1); border-radius: 4px;"></div>
+                </div>
+                <div
+                    style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted); margin-top: 10px;">
+                    <span>Q1 2026</span>
+                    <span>CURRENT PEAK</span>
+                </div>
+            </div>
+
+            <!-- Security Checksums -->
+            <div class="card glass" style="padding: 25px;">
+                <h4 style="margin-bottom: 20px; font-size: 0.9rem;">Protocol Integrity</h4>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <span style="font-size: 0.75rem;">SHA-256 Ingest</span>
+                        <span style="color: #00ff87; font-size: 0.7rem;">VERIFIED</span>
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <span style="font-size: 0.75rem;">P2P Encryption</span>
+                        <span style="color: #00ff87; font-size: 0.7rem;">VERIFIED</span>
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <span style="font-size: 0.75rem;">Node Firewall</span>
+                        <span style="color: #ff3e3e; font-size: 0.7rem;">ACTIVE_SCAN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            @keyframes dash-blink {
+                50% {
+                    opacity: 0;
+                }
+            }
+        </style>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <a href="index.html" class="footer-logo logo">STACKLY</a>
+                <p style="color: var(--text-muted); margin-top: 10px;">The world's leading source for high-fidelity
+                    technology news and insights.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li>
+                        <div class="dropdown">
+                            <a href="index.html">Home</a>
+                            <div class="dropdown-content">
+                                <a href="index.html">Home Page 1</a>
+                                <a href="index2.html">Home Page 2</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="news.html">News Feed</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="404.html">Twitter/X</a></li>
+                    <li><a href="404.html">Discord</a></li>
+                    <li><a href="404.html">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-map"
+            style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 40px;">
+            <h4
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 6px;">
+                📍 Our Office</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">Stackly HQ &mdash; MMR Complex,
+                Chinna Thirupathi, Salem - 636008</p>
+            <div
+                style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(0, 242, 254, 0.15); box-shadow: 0 0 30px rgba(0,242,254,0.05);">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15654.4074811099!2d78.1585!3d11.68!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf04752678125%3A0xe1b699982701047!2sMMR%20COMPLEX!5e0!3m2!1sen!2sin!4v1"
+                    width="100%" height="220"
+                    style="border:0; display:block; filter: grayscale(0.3) invert(0.85) hue-rotate(180deg);"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 40px;">&copy; 2026
+            <span class="logo-inline">STACKLY</span> Online Service. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

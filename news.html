@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Tech Feed | STACKLY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .news-filter {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
+        }
+
+        .featured-news {
+            grid-column: span 2;
+        }
+
+        .sidebar-link {
+            color: var(--text-muted);
+            transition: 0.3s;
+        }
+
+        .sidebar-link:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 992px) {
+            .news-main-layout {
+                grid-template-columns: 1fr !important;
+            }
+
+            .featured-news {
+                grid-column: span 1;
+            }
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-logo">STACKLY</div>
+        <div class="loader-bar"></div>
+    </div>
+    <nav class="scrolled">
+        <a href="index.html" class="logo">STACKLY</a>
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="index.html">Home</a>
+                <div class="dropdown-content">
+                    <a href="index.html">Home Page 1</a>
+                    <a href="index2.html">Home Page 2</a>
+        </div>
+            </div>
+            <a href="news.html" class="active">News</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+                    <a href="signin.html" class="nav-signin-btn"
+                style="background: linear-gradient(135deg, #3b5bdb, #7048e8); color: white; padding: 9px 22px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: opacity 0.2s; white-space: nowrap; margin-left: 10px;">Sign
+                In</a>
+        </div>
+        <div class="mobile-toggle" id="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+
+    <!-- Breaking News Ticker -->
+
+    <div class="container fade-in" style="margin-top: 110px;">
+        <h1 class="section-title">The Real-Time Frontier Feed</h1>
+
+        <div class="news-filter">
+            <button class="filter-btn active" onclick="window.location.href='404.html'">All Feed</button>
+            <button class="filter-btn" onclick="window.location.href='404.html'">AI & ML</button>
+            <button class="filter-btn" onclick="window.location.href='404.html'">Quantum</button>
+            <button class="filter-btn" onclick="window.location.href='404.html'">Space Tech</button>
+            <button class="filter-btn" onclick="window.location.href='404.html'">Cybersecurity</button>
+            <button class="filter-btn" onclick="window.location.href='404.html'">Fintech</button>
+        </div>
+
+        <div class="news-main-layout" style="display: grid; grid-template-columns: 3fr 1fr; gap: 40px;">
+            <div class="news-grid" id="full-news-grid">
+                <!-- Featured Card -->
+                <div class="card glass featured-news">
+                    <div class="card-img-wrapper" style="height: 350px;">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=1200"
+                            alt="Sustainable Team" class="card-img">
+                    </div>
+                    <div style="padding: 20px 0;">
+                        <span class="card-tag">Sustainability</span>
+                        <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Green Computing: The Next Data Centers</h2>
+                        <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 25px;">Dive deep into how
+                            the industry is solving its energy demands with carbon-neutral operations and oceanic
+                            cooling techniques to handle massive LLM loads.</p>
+                        <a href="404.html" class="btn btn-primary" style="padding: 10px 25px;">Read Full Deep Dive</a>
+                    </div>
+                </div>
+
+                <!-- News Item 1 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&q=80&w=800"
+                            alt="Developer Setup" class="card-img">
+                    </div>
+                    <span class="card-tag">Developer Tools</span>
+                    <h3>IDE Revolution 2026</h3>
+                    <p>How hyper-intelligent editors are integrating live neuro-feedback to predict developer intent
+                        before they even type.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">View
+                        Editor Workflows →</a>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&q=80&w=800"
+                            alt="Logistics" class="card-img">
+                    </div>
+                    <span class="card-tag">Autonomous Systems</span>
+                    <h3>The Subterranean Delivery Network</h3>
+                    <p>Switzerland initiates the first functional underground high-speed logistics network operated
+                        purely by an AGI swarm.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">Consult
+                        Logistics Maps →</a>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+                            alt="Cybersecurity" class="card-img">
+                    </div>
+                    <span class="card-tag">Cybersecurity</span>
+                    <h3>The End of Traditional Passwords?</h3>
+                    <p>FIDO Alliance announces the final transition roadmap to fully decentralized neural passkeys.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">See
+                        the Roadmap →</a>
+                </div>
+
+                <!-- News Item 4 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+                            alt="Hardware" class="card-img">
+                    </div>
+                    <span class="card-tag">Hardware</span>
+                    <h3>Graphite Anodes Shift Battery Life</h3>
+                    <p>Next-gen graphite-silicon composite anodes increase smartphone battery cycles to 10 years.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">Watch
+                        Video Explainer →</a>
+                </div>
+
+                <!-- News Item 5 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800"
+                            alt="Future Work" class="card-img">
+                    </div>
+                    <span class="card-tag">Future of Work</span>
+                    <h3>The 3-Day Work Week via AI-Ops</h3>
+                    <p>Case studies from 50 global corporations show productivity gains from autonomous project
+                        managers.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">Read
+                        Case Studies →</a>
+                </div>
+
+                <!-- News Item 6 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=800"
+                            alt="Fintech" class="card-img">
+                    </div>
+                    <span class="card-tag">Fintech</span>
+                    <h3>Algorithmic Stablecoins 2.0</h3>
+                    <p>New protocols using PID controllers achieve 99.99% peg stability during volatility events.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">Audit
+                        the Protocol →</a>
+                </div>
+
+                <!-- News Item 7 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+                            alt="Data Centers" class="card-img">
+                    </div>
+                    <span class="card-tag">Sustainability</span>
+                    <h3>Seawater-Cooled Node Deployment</h3>
+                    <p>Modular centers deployed in the North Sea show 60% cooling efficiency gains for LLM training
+                        clusters.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">View
+                        Efficiency Maps →</a>
+                </div>
+
+                <!-- News Item 8 -->
+
+                <!-- News Item 9 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800"
+                            alt="Web3" class="card-img">
+                    </div>
+                    <span class="card-tag">Web3</span>
+                    <h3>L3 Sharding: Scaling the World State</h3>
+                    <p>Newest Layer-3 protocols implement parallel sharding, enabling 1M+ TPS on decentralized networks.
+                    </p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">Technical
+                        Node Specs →</a>
+                </div>
+
+                <!-- News Item 10 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800"
+                            alt="Robotics" class="card-img">
+                    </div>
+                    <span class="card-tag">Robotics</span>
+                    <h3>Neuromorphic Vision in Humanoids</h3>
+                    <p>Event-based sensors modelled after the human retina reduce vision-processing power by 90% in
+                        latest robots.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">Watch
+                        Field Test →</a>
+                </div>
+
+                <!-- News Item 11 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
+                            alt="Energy" class="card-img">
+                    </div>
+                    <span class="card-tag">Energy</span>
+                    <h3>Solid-State Hydrogen Storage</h3>
+                    <p>Magnesium-based alloy storage makes hydrogen fuel-cell vehicles safer and more efficient than
+                        Li-ion fleets.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">Energy
+                        Density Data →</a>
+                </div>
+
+                <!-- News Item 12 -->
+                <div class="card glass">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=800"
+                            alt="Photonics" class="card-img">
+                    </div>
+                    <span class="card-tag">Hardware</span>
+                    <h3>Photonics AI: The Light-Speed Chip</h3>
+                    <p>First commercial optical compute units for LLM inference reach production, bypassing electron
+                        bottlenecks.</p>
+                    <a href="index.html"
+                        style="color:var(--accent-color); font-size: 0.8rem; margin-top: 15px; display: inline-block;">Benchmarking
+                        Light →</a>
+                </div>
+
+
+                <!-- Global Brief Card -->
+                <div class="card glass" style="grid-column: 1 / -1; border: 1px dashed var(--accent-color);">
+                    <div style="display: flex; gap: 40px; align-items: center; padding: 20px;">
+                        <span style="font-size: 3rem;">🛰️</span>
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 10px;">The Frontier Brief</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Join the leading technical network.
+                                Weekly deep-dives on hardware architectures and neural protocols.</p>
+                            <form style="display: flex; gap: 10px; margin-top: 20px;">
+                                <input type="email" placeholder="enter neural-link id or email"
+                                    style="flex: 1; padding: 12px; border-radius: 5px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
+                                <button class="btn btn-primary" type="button"
+                                    onclick="window.location.href='404.html'">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="card glass" style="padding: 25px;">
+                    <h4 style="margin-bottom: 20px; color: var(--accent-color);">Sector Sentiment</h4>
+                    <div style="margin-bottom: 20px;">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                            <span>AI / Robotics</span>
+                            <span style="color: #00ff87;">Bullish</span>
+                        </div>
+                        <div style="width: 100%; height: 4px; background: rgba(255,255,255,0.05);">
+                            <div style="width: 88%; height: 100%; background: #00ff87;"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                            <span>Quantum</span>
+                            <span style="color: #00ff87;">High Growth</span>
+                        </div>
+                        <div style="width: 100%; height: 4px; background: rgba(255,255,255,0.05);">
+                            <div style="width: 65%; height: 100%; background: var(--accent-color);"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                            <span>Fintech</span>
+                            <span style="color: #fff;">Neutral</span>
+                        </div>
+                        <div style="width: 100%; height: 4px; background: rgba(255,255,255,0.05);">
+                            <div style="width: 45%; height: 100%; background: #fff;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card glass" style="padding: 25px;">
+                    <h4 style="margin-bottom: 20px; color: #fff;">Stock Ticker</h4>
+                    <div style="font-size: 0.9rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span>NVDA</span>
+                            <span style="color: #00ff87;">+2.45%</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span>TSMC</span>
+                            <span style="color: #00ff87;">+1.12%</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span>ARM</span>
+                            <span style="color: #ff3e3e;">-0.54%</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>INTC</span>
+                            <span style="color: #00ff87;">+0.12%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card glass" style="padding: 25px;">
+                    <h4 style="margin-bottom: 15px; color: #fff;">Emerging Research</h4>
+                    <ul style="font-size: 0.8rem;">
+                        <li style="margin-bottom: 12px;"><a href="index.html" class="sidebar-link">• LLM Latency
+                                Optimization</a>
+                        </li>
+                        <li style="margin-bottom: 12px;"><a href="index.html" class="sidebar-link">• GaAs Crystal Growth
+                                Methods</a></li>
+                        <li style="margin-bottom: 12px;"><a href="index.html" class="sidebar-link">• Zero-Trust Mesh
+                                Topologies</a></li>
+                        <li><a href="index.html" class="sidebar-link">• BCI Motor Cortex mapping</a></li>
+                    </ul>
+                    <div class="card glass" style="padding: 25px;">
+                        <h4 style="margin-bottom: 15px; color: #fff; font-size: 0.9rem;">Resource Hub</h4>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="404.html" class="btn btn-outline"
+                                style="font-size: 0.7rem; justify-content: flex-start; padding: 10px;">📄 State of
+                                Quantum 2026</a>
+                            <a href="404.html" class="btn btn-outline"
+                                style="font-size: 0.7rem; justify-content: flex-start; padding: 10px;">📊 AI Ethics
+                                Framework v2</a>
+                        </div>
+                    </div>
+
+                    <div class="card glass" style="padding: 20px; text-align: center;">
+                        <div
+                            style="width: 60px; height: 60px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100'); background-size: cover; margin: 0 auto 15px; border: 2px solid var(--accent-color);">
+                        </div>
+                        <h5 style="margin-bottom: 5px;">Dr. Julian Reed</h5>
+                        <p style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 15px;">Lead Hardware
+                            Investigator</p>
+                        <a href="index.html" style="color: var(--accent-color); font-size: 0.75rem;">Follow Research</a>
+                    </div>
+            </aside>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn btn-primary" id="load-more" onclick="window.location.href='404.html'">Synchronize Data
+                Hub...</button>
+        </div>
+    </div>
+
+    <!-- Related Deep Dives -->
+    <section class="container fade-in" style="margin-top: 30px; margin-bottom: 30px;">
+        <h2 class="section-title">Related Technical Deep-Dives</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div class="card glass" style="display: flex; gap: 20px; align-items: start;">
+                <div
+                    style="width: 80px; height: 80px; border-radius: 12px; background: rgba(0, 242, 254, 0.1); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                    📁</div>
+                <div>
+                    <h4 style="font-size: 1rem;">The Silicon Frontier Report</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">A 50-page breakdown of 2nm
+                        manufacturing challenges.</p>
+                </div>
+            </div>
+            <div class="card glass" style="display: flex; gap: 20px; align-items: start;">
+                <div
+                    style="width: 80px; height: 80px; border-radius: 12px; background: rgba(0, 242, 254, 0.1); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                    ⛓️</div>
+                <div>
+                    <h4 style="font-size: 1rem;">Layer-3 Scaling Analysis</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Real-world latency tests on
+                        next-gen ZK-rollups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <a href="index.html" class="footer-logo logo">STACKLY</a>
+                <p style="color: var(--text-muted); margin-top: 10px;">The world's leading source for high-fidelity
+                    technology news and insights.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li>
+                        <div class="dropdown">
+                            <a href="index.html">Home</a>
+                            <div class="dropdown-content">
+                                <a href="index.html">Home Page 1</a>
+                                <a href="index2.html">Home Page 2</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="news.html">News Feed</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="index.html">Twitter/X</a></li>
+                    <li><a href="index.html">Discord</a></li>
+                    <li><a href="index.html">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-map"
+            style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 40px;">
+            <h4
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 6px;">
+                📍 Our Office</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">Stackly HQ &mdash; MMR Complex,
+                chinna tirupati, Salem, Tamil
+                Nadu, India</p>
+            <div
+                style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(0, 242, 254, 0.15); box-shadow: 0 0 30px rgba(0,242,254,0.05);">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15654.4074811099!2d78.1585!3d11.68!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf04752678125%3A0xe1b699982701047!2sMMR%20COMPLEX!5e0!3m2!1sen!2sin!4v1"
+                    width="100%" height="220"
+                    style="border:0; display:block; filter: grayscale(0.3) invert(0.85) hue-rotate(180deg);"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 40px;">&copy; 2026
+            <span class="logo-inline">STACKLY</span> Online Service. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

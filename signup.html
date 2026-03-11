@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Neural ID | STACKLY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #1a1a3a 0%, #050505 100%);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 35px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+            margin: 20px;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .auth-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, #00f2fe 0%, #7048e8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .auth-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #00f2fe;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+        }
+
+        .btn-auth {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #3b5bdb, #7048e8);
+            border: none;
+            border-radius: 14px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        .btn-auth:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(112, 72, 232, 0.4);
+        }
+
+        .auth-footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .auth-footer a {
+            color: #00f2fe;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        #bg-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        @media (max-width: 480px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="auth-container">
+        <div class="auth-header">
+            <a href="index.html" class="auth-logo">STACKLY</a>
+            <h2 class="auth-title">Create Neural ID</h2>
+        </div>
+        
+        <form id="registerForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-control" placeholder="Doe" required>
+                </div>
+            </div>
+            
+            <div class="form-group full-width">
+                <label for="email">Neural ID / Email</label>
+                <input type="email" id="email" class="form-control" placeholder="nexus@stackly.io" required>
+            </div>
+            
+            <div class="form-group full-width">
+                <label for="password">Security Protocol / Password</label>
+                <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="confirm">Verify Protocol</label>
+                <input type="password" id="confirm" class="form-control" placeholder="••••••••" required>
+            </div>
+            
+            <button type="submit" class="btn-auth">Provision ID</button>
+        </form>
+
+        <div class="auth-footer">
+            Already have a protocol? <a href="signin.html">Sign In</a>
+            <div style="margin-top: 25px;">
+                <a href="index.html" style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: block;">← Return to Hub</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        const particles = [];
+        for (let i = 0; i < 80; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                size: Math.random() * 2 + 0.5,
+                opacity: Math.random() * 0.4 + 0.1,
+                speedX: (Math.random() - 0.5) * 0.4,
+                speedY: (Math.random() - 0.5) * 0.4
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+            
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0, 242, 254, ${p.opacity})`;
+                ctx.fill();
+                
+                p.x += p.speedX;
+                p.y += p.speedY;
+                
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+            });
+            
+            requestAnimationFrame(draw);
+        }
+        draw();
+
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Store dummy data
+            localStorage.setItem('isLoggedIn', 'true');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="light-theme">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | Contact (v2) - White Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="light-theme">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-logo">STACKLY</div>
+        <div class="loader-bar"></div>
+    </div>
+    <nav class="scrolled">
+        <a href="index.html" class="logo">STACKLY</a>
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="index.html">Home</a>
+                <div class="dropdown-content">
+                    <a href="index.html">Home Page 1</a>
+                    <a href="index2.html">Home Page 2</a>
+        </div>
+            </div>
+            <a href="news2.html">News</a>
+            <a href="about2.html">About</a>
+            <a href="services2.html">Services</a>
+            <a href="contact2.html" class="active">Contact</a>
+                    <a href="signin.html" class="nav-signin-btn"
+                style="background: linear-gradient(135deg, #3b5bdb, #7048e8); color: white; padding: 9px 22px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: opacity 0.2s; white-space: nowrap; margin-left: 10px;">Sign
+                In</a>
+        </div>
+        <div class="mobile-toggle" id="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Breaking News Ticker -->
+
+    <div class="container fade-in" style="margin-top: 100px; display: flex; flex-direction: column; gap: 80px;">
+        <div style="flex: 1;">
+            <h1 class="section-title">Establish Sync</h1>
+            <p style="color: #6c757d; line-height: 1.8; margin-bottom: 40px;">Request data-hub access, protocol audits,
+                or institutional partnerships. All communication is filtered through our secure White Layer nodes.</p>
+
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: #1a1a2e; margin-bottom: 5px;">Node Address</h4>
+                <p style="color: #6c757d; font-size: 0.9rem;">772 Silicon Way, Lab Node 04<br>Zurich Tech District, 8001
+                    CH</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: #1a1a2e; margin-bottom: 5px;">Secure Channel</h4>
+                <p style="color: #6c757d; font-size: 0.9rem;">comms@STACKLY.v2.eth</p>
+            </div>
+        </div>
+
+        <div style="flex: 1;">
+            <div class="card glass" style="padding: 40px;">
+                <h3 style="margin-bottom: 25px;">Transmission Request</h3>
+                <form onsubmit="event.preventDefault(); window.location.href='404.html'">
+                    <div class="form-group">
+                        <label>Institutional ID</label>
+                        <input type="text" placeholder="e.g. NODE_AUTH_77">
+                    </div>
+                    <div class="form-group">
+                        <label>Priority Level</label>
+                        <select
+                            style="width: 100%; padding: 12px; background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.05); border-radius: 8px;">
+                            <option>STANDARD_INGEST</option>
+                            <option>CRITICAL_OVERRIDE</option>
+                            <option>ADVISORY_PING</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Payload (Message)</label>
+                        <textarea rows="4" placeholder="Encrypted transmission content..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; justify-content: center; margin-top: 20px;">Init Transmission</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map/Visual decoration with WebP -->
+    <section class="container fade-in">
+        <div class="card glass"
+            style="height: 300px; padding: 0; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center;">
+            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=1200"
+                alt="World Map" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+            <div style="position: absolute; text-align: center;">
+                <h2 style="color: #1a1a2e; font-size: 1.5rem;">Global Connection Grid Active</h2>
+                <p style="color: #007bff; font-weight: 800; font-size: 0.8rem; margin-top: 10px;">LATENCY: 14ms |
+                    STATUS: SECURE</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container fade-in">
+        <h2 class="section-title">Regional Headquarters</h2>
+        <div class="news-grid">
+            <div class="card glass">
+                <div class="card-img-wrapper" style="height: 180px;">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800"
+                        alt="New York" class="card-img">
+                </div>
+                <h4 style="margin-bottom: 5px;">North America Node</h4>
+                <p style="font-size: 0.8rem; color: #6c757d;">42nd Floor, One World Trade, NY 10007</p>
+            </div>
+            <div class="card glass">
+                <div class="card-img-wrapper" style="height: 180px;">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800"
+                        alt="Tokyo" class="card-img">
+                </div>
+                <h4 style="margin-bottom: 5px;">Asia-Pacific Node</h4>
+                <p style="font-size: 0.8rem; color: #6c757d;">Roppongi Hills Mori Tower, Tokyo 106-6101</p>
+            </div>
+            <div class="card glass">
+                <div class="card-img-wrapper" style="height: 180px;">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800"
+                        alt="London" class="card-img">
+                </div>
+                <h4 style="margin-bottom: 5px;">European Node</h4>
+                <p style="font-size: 0.8rem; color: #6c757d;">Level 39, One Canada Square, London E14 5AB</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container fade-in">
+        <h2 class="section-title">Institutional Support Matrix</h2>
+        <div class="news-grid">
+            <div class="card glass">
+                <h4 style="color: #007bff;">Protocol Sync</h4>
+                <p style="font-size: 0.8rem; color: #6c757d; margin-top: 10px;">For architectural alignment and node
+                    integration support.</p>
+                <a href="index.html"
+                    style="font-size: 0.75rem; color: #1a1a2e; font-weight: 800; display: block; margin-top: 15px; text-decoration: none;">Connect</a>
+            </div>
+            <div class="card glass">
+                <h4 style="color: #007bff;">Hardware Verify</h4>
+                <p style="font-size: 0.8rem; color: #6c757d; margin-top: 10px;">Assistance with semiconductor and
+                    quantum node verification.</p>
+                <a href="index.html"
+                    style="font-size: 0.75rem; color: #1a1a2e; font-weight: 800; display: block; margin-top: 15px; text-decoration: none;">Connect</a>
+            </div>
+            <div class="card glass">
+                <h4 style="color: #007bff;">Enterprise API</h4>
+                <p style="font-size: 0.8rem; color: #6c757d; margin-top: 10px;">High-bandwidth data hub access for
+                    institutional users.</p>
+                <a href="index.html"
+                    style="font-size: 0.75rem; color: #1a1a2e; font-weight: 800; display: block; margin-top: 15px; text-decoration: none;">Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container fade-in">
+        <h2 class="section-title">Satellite Nodes</h2>
+        <div class="news-grid">
+            <div class="card glass">
+                <h4 style="margin-bottom: 5px;">Berlin Node 09</h4>
+                <p style="font-size: 0.75rem; color: #6c757d;">Tech-Hub Central, Berlin 10115</p>
+            </div>
+            <div class="card glass">
+                <h4 style="margin-bottom: 5px;">Singapore Node 14</h4>
+                <p style="font-size: 0.75rem; color: #6c757d;">Marina Bay Financial, Singapore 018981</p>
+            </div>
+            <div class="card glass">
+                <h4 style="margin-bottom: 5px;">San Francisco Node 02</h4>
+                <p style="font-size: 0.75rem; color: #6c757d;">Silicon Valley District, SF 94105</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container fade-in">
+        <h2 class="section-title">Communications Protocols</h2>
+        <div class="news-grid">
+            <div class="card glass">
+                <span class="card-tag">L3 Sync</span>
+                <h3>Direct-Node Link</h3>
+                <p>Establishing peer-to-peer data bridges for ultra-secure institutional reporting.</p>
+                <a href="index.html"
+                    style="font-size: 0.75rem; color: #1a1a2e; font-weight: 800; display: block; margin-top: 15px; text-decoration: none;">Init
+                    Protocol</a>
+            </div>
+            <div class="card glass">
+                <span class="card-tag">Aether</span>
+                <h3>Packet-Neural Relay</h3>
+                <p>Routing critical alerts through the <span class="logo-inline">STACKLY</span> distributed mesh to
+                    bypass congestion.</p>
+                <a href="index.html"
+                    style="font-size: 0.75rem; color: #1a1a2e; font-weight: 800; display: block; margin-top: 15px; text-decoration: none;">Init
+                    Protocol</a>
+            </div>
+            <div class="card glass">
+                <span class="card-tag">Logic</span>
+                <h3>Verifiable Ingest</h3>
+                <p>Automated ZK-proof generation for incoming technical briefings and data nodes.</p>
+                <a href="index.html"
+                    style="font-size: 0.75rem; color: #1a1a2e; font-weight: 800; display: block; margin-top: 15px; text-decoration: none;">Init
+                    Protocol</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <a href="index.html" class="footer-logo logo" style="filter: brightness(0.2);">STACKLY</a>
+                <p style="color: #6c757d; margin-top: 10px;">The world's leading source for high-fidelity
+                    technology news and insights.</p>
+            </div>
+            <div class="footer-links">
+                <h4 style="color: #1a1a2e;">Platform (v2)</h4>
+                <ul>
+                    <li><a href="index2.html">Institutional Home</a></li>
+                    <li><a href="news2.html">Analytical Feed</a></li>
+                    <li><a href="dashboard.html" onclick="window.location.href='404.html'">Data Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 style="color: #1a1a2e;">Protocol</h4>
+                <ul>
+                    <li><a href="about2.html">Whitepaper</a></li>
+                    <li><a href="services2.html">Service Nodes</a></li>
+                    <li><a href="contact2.html">Sync Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 style="color: #1a1a2e;">Connect</h4>
+                <ul>
+                    <li><a href="index.html">X-Pulse</a></li>
+                    <li><a href="index.html">Discord Node</a></li>
+                    <li><a href="index.html">Neural-Link</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-map" style="margin-top: 40px; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 40px;">
+            <h4
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #6c757d; margin-bottom: 6px;">
+                📍 Our Office</h4>
+            <p style="font-size: 0.8rem; color: #6c757d; margin-bottom: 15px;">Stackly HQ &mdash; MMR Complex, Chinna
+                Thirupathi, Salem - 636008</p>
+            <div
+                style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(0, 123, 255, 0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15654.4074811099!2d78.1585!3d11.68!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf04752678125%3A0xe1b699982701047!2sMMR%20COMPLEX!5e0!3m2!1sen!2sin!4v1"
+                    width="100%" height="220" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 40px;">&copy; 2026
+            <span class="logo-inline">STACKLY</span> Institutional Network. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

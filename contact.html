@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | STACKLY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-logo">STACKLY</div>
+        <div class="loader-bar"></div>
+    </div>
+    <nav class="scrolled">
+        <a href="index.html" class="logo">STACKLY</a>
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="index.html">Home</a>
+                <div class="dropdown-content">
+                    <a href="index.html">Home Page 1</a>
+                    <a href="index2.html">Home Page 2</a>
+        </div>
+            </div>
+            <a href="news.html">News</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html" class="active">Contact</a>
+                    <a href="signin.html" class="nav-signin-btn"
+                style="background: linear-gradient(135deg, #3b5bdb, #7048e8); color: white; padding: 9px 22px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: opacity 0.2s; white-space: nowrap; margin-left: 10px;">Sign
+                In</a>
+        </div>
+        <div class="mobile-toggle" id="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Breaking News Ticker -->
+
+
+    <div class="container fade-in" style="margin-top: 100px; flex: 1;">
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: start;">
+            <div>
+                <h1 class="section-title">Get in Touch with the Future</h1>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+                    Whether you're a curious reader, a potential partner, or a tech visionary, we'd love to hear from
+                    you. Our average response time is under 12 hours.
+                </p>
+                <div style="margin-top: 25px;">
+                    <div style="margin-bottom: 20px;">
+                        <span style="color: var(--accent-color); font-weight: 700;">General Inquiries:</span>
+                        <p style="color: var(--text-muted);">hello@STACKLY.online</p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <span style="color: var(--accent-color); font-weight: 700;">Press & Media:</span>
+                        <p style="color: var(--text-muted);">press@STACKLY.online</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px; font-size: 1.2rem;">Global Intelligence Nodes</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <p style="font-weight: 600; font-size: 0.9rem;">Silicon Valley Node</p>
+                            <p style="color: var(--text-muted); font-size: 0.8rem;">404 Frontier Blvd, San Francisco, CA
+                            </p>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600; font-size: 0.9rem;">Neo-Senzhen Node</p>
+                            <p style="color: var(--text-muted); font-size: 0.8rem;">Level 88, Sky Tower, Senzhen</p>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600; font-size: 0.9rem;">London Core</p>
+                            <p style="color: var(--text-muted); font-size: 0.8rem;">12 Neural Way, Kings Cross, London
+                            </p>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600; font-size: 0.9rem;">Tokyo Edge</p>
+                            <p style="color: var(--text-muted); font-size: 0.8rem;">9-1 Shibuya Digital Crossing, Tokyo
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-container glass" style="margin-top: 0; width: 100%; max-width: 600px;">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject"
+                            style="width: 100%; padding: 12px 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 8px; color: #fff; font-family: inherit;">
+                            <option value="general">General Inquiry</option>
+                            <option value="press">Press Relations</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="bug">Technical Support</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5"
+                            placeholder="Tell us more about what's on your mind..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; justify-content: center; margin-top: 15px;">Send Pulse</button>
+                    <p id="form-status"
+                        style="text-align: center; margin-top: 20px; font-size: 0.9rem; display: none; color: var(--accent-color);">
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Priority Channels -->
+        <h2 class="section-title" style="margin-top: 60px;">Priority Support Nodes</h2>
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 30px;">
+            <div class="card glass" style="padding: 30px;">
+                <h4 style="margin-bottom: 15px; color: var(--accent-color);">Enterprise Ingress</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">Dedicated SLA-backed support
+                    for institutional partners and private node operators.</p>
+                <a href="index.html"
+                    style="color: #fff; font-size: 0.8rem; font-weight: 700; margin-top: 15px; display: inline-block;">Access
+                    Portal →</a>
+            </div>
+            <div class="card glass" style="padding: 30px;">
+                <h4 style="margin-bottom: 15px; color: var(--accent-color);">Technical Triage</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">Direct access to our hardware
+                    and protocol investigative teams for data verification.</p>
+                <p style="font-size: 0.75rem; margin-top: 15px;">Avg. Response: <span style="color: #00ff87;">14
+                        mins</span></p>
+            </div>
+        </div>
+
+        <!-- Secure Communication -->
+        <h2 class="section-title">Secure Communication</h2>
+        <div class="card glass" style="padding: 40px; margin-bottom: 30px;">
+            <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.9rem;">For sensitive leaks or
+                privileged intelligence, use our encrypted PGP channels.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px;">
+                    <span
+                        style="font-size: 0.65rem; color: var(--accent-color); font-weight: 800; letter-spacing: 1px;">FINGERPRINT</span>
+                    <p style="font-family: monospace; font-size: 0.75rem; margin-top: 5px; color: #fff;">8821 99AF 42BC
+                        110E</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px;">
+                    <span
+                        style="font-size: 0.65rem; color: var(--accent-color); font-weight: 800; letter-spacing: 1px;">PROTOCOL</span>
+                    <p style="font-size: 0.75rem; margin-top: 5px; color: #fff;">OpenPGP / Signal-Mesh</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Global Ingest Availability</h2>
+        <div class="card glass" style="padding: 0; overflow: hidden; margin-bottom: 30px;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead style="background: rgba(255,255,255,0.02);">
+                    <tr>
+                        <th style="padding: 20px 30px; font-size: 0.8rem; color: var(--accent-color);">REGION</th>
+                        <th style="padding: 20px 30px; font-size: 0.8rem; color: var(--accent-color);">UTC HOURS</th>
+                        <th style="padding: 20px 30px; font-size: 0.8rem; color: var(--accent-color);">LATENCY ADVISORY
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="font-size: 0.85rem;">
+                    <tr style="border-top: 1px solid var(--glass-border);">
+                        <td style="padding: 20px 30px;">Americas (SF-01)</td>
+                        <td style="padding: 20px 30px;">14:00 - 02:00</td>
+                        <td style="padding: 20px 30px;"><span style="color: #00ff87;">OPTIMAL (15ms)</span></td>
+                    </tr>
+                    <tr style="border-top: 1px solid var(--glass-border);">
+                        <td style="padding: 20px 30px;">Europe/Africa (LDN-03)</td>
+                        <td style="padding: 20px 30px;">08:00 - 20:00</td>
+                        <td style="padding: 20px 30px;"><span style="color: var(--accent-color);">STABLE (42ms)</span>
+                        </td>
+                    </tr>
+                    <tr style="border-top: 1px solid var(--glass-border);">
+                        <td style="padding: 20px 30px;">Asia/Pacific (SZ-02)</td>
+                        <td style="padding: 20px 30px;">01:00 - 13:00</td>
+                        <td style="padding: 20px 30px;"><span style="color: #00ff87;">PEAK (12ms)</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title">Press Asset Hub</h2>
+        <div class="card glass" style="padding: 40px; margin-bottom: 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h4 style="margin-bottom: 10px;">Brand Kit v2026</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">High-res vector logos, technical diagrams,
+                        and verified team headshots.</p>
+                </div>
+                <a href="404.html" class="btn btn-outline">Download Pack (42MB)</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <a href="index.html" class="footer-logo logo">STACKLY</a>
+                <p style="color: var(--text-muted); margin-top: 10px;">The world's leading source for high-fidelity
+                    technology news and insights.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li>
+                        <div class="dropdown">
+                            <a href="index.html">Home</a>
+                            <div class="dropdown-content">
+                                <a href="index.html">Home Page 1</a>
+                                <a href="index2.html">Home Page 2</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="news.html">News Feed</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="index.html">Twitter/X</a></li>
+                    <li><a href="index.html">Discord</a></li>
+                    <li><a href="index.html">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-map"
+            style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 40px;">
+            <h4
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 6px;">
+                📍 Our Office</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;"><span
+                    class="logo-inline">Stackly</span> HQ &mdash; MMR Complex,
+                Chinna Thirupathi, Salem - 636008</p>
+            <div
+                style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(0, 242, 254, 0.15); box-shadow: 0 0 30px rgba(0,242,254,0.05);">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15654.4074811099!2d78.1585!3d11.68!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf04752678125%3A0xe1b699982701047!2sMMR%20COMPLEX!5e0!3m2!1sen!2sin!4v1"
+                    width="100%" height="220"
+                    style="border:0; display:block; filter: grayscale(0.3) invert(0.85) hue-rotate(180deg);"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 40px;">&copy; 2026
+            <span class="logo-inline">STACKLY</span> Online Service. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const status = document.getElementById('form-status');
+            status.style.display = 'block';
+            status.innerText = "Transmitting data to <span class=\"logo-inline\">STACKLY</span> nodes...";
+            setTimeout(() => {
+                status.innerText = "Message Received. We'll be in touch soon!";
+                e.target.reset();
+            }, 2000);
+        });
+    </script>
+</body>
+
+</html>
